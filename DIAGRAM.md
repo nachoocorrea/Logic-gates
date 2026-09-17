@@ -36,12 +36,12 @@ classDiagram
         output() : LogicValue
     }
 
-    %Relaciones 
+    %% Relaciones 
     LogicValue <|-- TrueValue
     LogicValue <|-- FalseValue
     LogicValue <|-- GateOutput
 
-    %Implementacion de la interfaz Gate
+    %% Implementacion de la interfaz Gate
     Gate <|-- AndGate
 
     %% Relación de asociación: AndGate contiene/recibe instancias de LogicValue
