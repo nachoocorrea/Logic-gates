@@ -47,8 +47,8 @@ classDiagram
     ILogicValue <|-- GateOutput
 
     %% Implementacion de la interfaz Gate
-    IGate <|-- AndGate
-    IGate <|.. NotGate
+    Gate <|-- AndGate
+    Gate <|.. NotGate
 
     %% Relación de asociación: AndGate contiene/recibe instancias de LogicValue
     AndGate "1" --> "2" ILogicValue : input
