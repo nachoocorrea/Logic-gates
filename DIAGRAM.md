@@ -46,3 +46,4 @@ classDiagram
 
     %% Relación de asociación: AndGate contiene/recibe instancias de LogicValue
     AndGate "1" --> "2" LogicValue : inputs
+```
