@@ -2,12 +2,12 @@
 classDiagram
     direction LR
 
-    class LogicValue{
+    class ILogicValue{
+        <<interface>
         Value: bool
     }
 
     class TrueValue{
-        <<interfacce>>
         Value: bool
     }
 
