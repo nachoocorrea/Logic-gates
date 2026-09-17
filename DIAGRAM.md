@@ -25,25 +25,32 @@ classDiagram
     }
 
     class AndGate{
-        input1 : LogicValue
-        input2 : LogicValue
-        output() : LogicValue
+        input1 : ILogicValue
+        input2 : ILogicValue
+        output() : ILogicValue
     }
 
     class OrGate{
-        input1 : LogicValue
-        input2 : LogicValue
-        output() : LogicValue
+        input1 : ILogicValue
+        input2 : ILogicValue
+        output() : ILogicValue
+    }
+
+    class NotGate {
+        input: ILogicValue
+        Output(): ILogicValue
     }
 
     %% Relaciones 
-    LogicValue <|-- TrueValue
-    LogicValue <|-- FalseValue
-    LogicValue <|-- GateOutput
+    ILogicValue <|-- TrueValue
+    ILogicValue <|-- FalseValue
+    ILogicValue <|-- GateOutput
 
     %% Implementacion de la interfaz Gate
-    Gate <|-- AndGate
+    IGate <|-- AndGate
+    IGate <|.. NotGate
 
     %% Relación de asociación: AndGate contiene/recibe instancias de LogicValue
-    AndGate "1" --> "2" LogicValue : inputs
+    AndGate "1" --> "2" ILogicValue : input
+    NotGate "1" --> "1" ILogicValue : input
 ```
