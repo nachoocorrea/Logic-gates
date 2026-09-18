@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Library;
+using System;
 
 namespace LibraryTests
 {
@@ -64,6 +65,26 @@ namespace LibraryTests
             // Assert
             Assert.That(result, Is.True);
         }
+
+        [Test]
+        public void TestGarageGate()
+        {
+            // Arrange
+            ILogicValue t = new TrueValue();
+            ILogicValue f = new FalseValue();
+
+            // Act y Assert
+            Assert.That(new GarageGate(f, f, f).Output().Value, Is.False);
+            Assert.That(new GarageGate(f, f, t).Output().Value, Is.True);
+            Assert.That(new GarageGate(f, t, f).Output().Value, Is.False);
+            Assert.That(new GarageGate(f, t, t).Output().Value, Is.False);
+            Assert.That(new GarageGate(t, f, f).Output().Value, Is.False);
+            Assert.That(new GarageGate(t, f, t).Output().Value, Is.False);
+            Assert.That(new GarageGate(t, t, f).Output().Value, Is.False);
+            Assert.That(new GarageGate(t, t, t).Output().Value, Is.True);
+        }
+
+
     }
 }
     
